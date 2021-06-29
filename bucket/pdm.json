@@ -19,10 +19,10 @@
     "post_install": "& \"$dir\\venv\\Scripts\\pdm.exe\" --pep582",
     "checkver": {
         "url": "https://pypi.org/project/pdm/#files",
-        "re": "(https://files.pythonhosted.org/packages/.*/pdm-(?<version>[\\d.]+)-.*\\.whl)",
+        "re": "https://files.pythonhosted.org/(packages/.*/pdm-(?<version>[\\d.]+)-.*\\.whl)",
         "replace": "${version}"
     },
     "autoupdate": {
-        "url": "$match1"
+        "url": "https://files.pythonhosted.org/$match1"
     }
 }
