@@ -1,0 +1,27 @@
+{
+    "homepage": "http://pdm.fming.dev",
+    "version": "1.6.4",
+    "license": "MIT",
+    "url": [
+        "https://files.pythonhosted.org/packages/72/c3/05fe57ee3a3fedb187915491ff4f1191854ce56a7196c2f87e6a8db87b01/pdm-1.6.4-py3-none-any.whl"
+    ],
+    "depends": ["python"],
+    "hash": [
+        "b621252712e11e0d81c720dc422db0c547e56d92f8bcfaf1af6dcc7e2025e74a"
+    ],
+    "bin": ["venv\\Scripts\\pdm.exe"],
+    "installer": {
+        "script": [
+            "python -m venv \"$dir\\venv\"",
+            "& \"$dir\\venv\\python.exe\" -m pip install \"$dir\\$fname\""
+        ]
+    },
+    "checkver": {
+        "url": "https://pypi.org/project/pdm/#files",
+        "re": "(https://files.pythonhosted.org/packages/.*/pdm-(?<version>[\\d.]+)-.*\\.whl)",
+        "replace": "${version}"
+    },
+    "autoupdate": {
+        "url": "$match1"
+    }
+}

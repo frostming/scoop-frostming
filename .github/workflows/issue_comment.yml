@@ -1,16 +1,15 @@
 on:
   issue_comment:
-    types: [ created ]
+    types: [created]
 name: Commented Pull Request
 jobs:
   pullRequestHandler:
     name: PullRequestHandler
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
-    - name: PullRequestHandler
-      uses: Ash258/Scoop-GithubActions@stable
-      if: startsWith(github.event.comment.body, '/verify') && contains(fromJSON('["r15ch13","rasa","Ash258"]'), github.event.comment.user.login)
-      env:
-        GITH_EMAIL: cabera.jakub@gmail.com
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@main
+      - name: PullRequestHandler
+        uses: Ash258/Scoop-GithubActions@stable
+        if: startsWith(github.event.comment.body, '/verify') && contains(fromJSON('["frostming"]'), github.event.comment.user.login)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
