@@ -13,9 +13,10 @@
     "installer": {
         "script": [
             "python -m venv \"$dir\\venv\"",
-            "& \"$dir\\venv\\python.exe\" -m pip install \"$dir\\$fname\""
+            "& \"$dir\\venv\\Scripts\\python.exe\" -m pip install \"$dir\\$fname\""
         ]
     },
+    "post_install": "& \"$dir\\venv\\Scripts\\pdm.exe\" --pep582",
     "checkver": {
         "url": "https://pypi.org/project/pdm/#files",
         "re": "(https://files.pythonhosted.org/packages/.*/pdm-(?<version>[\\d.]+)-.*\\.whl)",
