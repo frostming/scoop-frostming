@@ -17,6 +17,13 @@
         ]
     },
     "post_install": "& \"$dir\\venv\\Scripts\\pdm.exe\" --pep582",
+    "uninstaller": {
+        "script": [
+            "$oldPath = [Environment]::GetEnvironmentVariable(\"PYTHONPATH\", [System.EnvironmentVariableTarget]::User)",
+            "$newPath = ($oldPath.Split(';') | Where { $_ -notlike \"$dir\\venv\\*\" }) -join ';'",
+            "[Environment]::SetEnvironmentVariable(\"PYTHONPATH\", $newPath, [System.EnvironmentVariableTarget]::User)"
+        ]
+    },
     "checkver": {
         "url": "https://pypi.org/project/pdm/#files",
         "re": "https://files.pythonhosted.org/(packages/.*/pdm-(?<version>[\\d.]+)-.*\\.whl)",
