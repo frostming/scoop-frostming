@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: PullRequestHandler
-        uses: Ash258/Scoop-GithubActions@stable-win
+        uses: frostming/scoop-action@main
         if: startsWith(github.event.comment.body, '/verify') && contains(fromJSON('["frostming"]'), github.event.comment.user.login)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

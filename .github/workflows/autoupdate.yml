@@ -8,8 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Excavate
-        uses: Ash258/Scoop-GithubActions@stable-win
+        uses: frostming/scoop-action@main
         env:
-          GITHUB_EVENT_NAME: schedule
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_UPDATED: "1"

@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: IssueHandler
-        uses: Ash258/Scoop-GithubActions@stable-win
+        uses: frostming/scoop-action@main
         if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
