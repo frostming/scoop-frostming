@@ -6,9 +6,10 @@ jobs:
     name: Excavate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Excavate
-        uses: Ash258/Scoop-GithubActions@stable
+        uses: Ash258/Scoop-GithubActions@stable-win
         env:
+          GITHUB_EVENT_NAME: workflow_dispatch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_UPDATED: "1"

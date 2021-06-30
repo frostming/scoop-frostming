@@ -7,8 +7,8 @@ jobs:
     name: PullRequestHandler
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v2
       - name: PullRequestHandler
-        uses: Ash258/Scoop-GithubActions@stable
+        uses: Ash258/Scoop-GithubActions@stable-win
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
