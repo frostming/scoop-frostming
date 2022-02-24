@@ -1,6 +1,7 @@
 {
     "homepage": "http://pdm.fming.dev",
     "version": "1.13.3",
+    "description": "Python Development Master",
     "license": "MIT",
     "url": "https://files.pythonhosted.org/packages/e1/f4/707c6955f64de060e4b0f353fffdf92340552febd5cf8671fbd685679870/pdm-1.13.3-py3-none-any.whl",
     "depends": "python",
