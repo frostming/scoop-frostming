@@ -17,12 +17,12 @@
         "if (-not (Test-Path -Path $PROFILE\\..\\Completions -PathType Container)) {",
         "    mkdir $PROFILE\\..\\Completions",
         "    echo @'",
-        "    Get-ChildItem \"$PROFILE\\..\\Completions\\\" | ForEach-Object {",
-        "        . $_.FullName",
-        "    }",
-        "    '@ | Out-File -Append -Encoding utf8 $PROFILE",
+        "Get-ChildItem \"$PROFILE\\..\\Completions\\\" | ForEach-Object {",
+        "    . $_.FullName",
         "}",
-        "pdm completion powershell | Out-File -Encoding utf8 $PROFILE\\..\\Completions\\pdm_completion.ps1"
+        "'@ | Out-File -Append -Encoding utf8 $PROFILE",
+        "}",
+        "& \"$dir\\venv\\Scripts\\pdm.exe\" completion powershell | Out-File -Encoding utf8 $PROFILE\\..\\Completions\\pdm_completion.ps1"
     ],
     "uninstaller": {
         "script": [
