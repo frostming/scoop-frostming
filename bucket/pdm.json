@@ -1,11 +1,11 @@
 {
-    "homepage": "http://pdm.fming.dev",
-    "version": "2.16.1",
+    "homepage": "http://pdm-project.org",
+    "version": "2.17.2",
     "description": "Python package and dependency manager supporting the latest PEP standards",
     "license": "MIT",
-    "url": "https://files.pythonhosted.org/packages/b7/09/09395dba9cd401f84ad03d4740eb68eb0ab97b589fbb1edc01413b73305a/pdm-2.16.1-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/c1/a9/317936236b36ee160181861df0f909137c89815aef714bb537aacf20d302/pdm-2.17.2-py3-none-any.whl",
     "depends": "python",
-    "hash": "f3473ff12433bcc42cc1e7540c2c84d028290619542c61431fe722e54536c3e3",
+    "hash": "82a3dbfdb22e37dc519550f6851cbd4070eca27a8cf6f1e1cae102c0fb6be8bc",
     "bin": "venv\\Scripts\\pdm.exe",
     "installer": {
         "script": [
