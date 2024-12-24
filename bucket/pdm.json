@@ -35,11 +35,12 @@
         ]
     },
     "checkver": {
-        "url": "https://pypi.org/project/pdm/#files",
-        "re": "https://files.pythonhosted.org/(packages/.*/pdm-(?<version>[\\d.]+(?:post\\d+)?)-.*\\.whl)",
+        "url": "https://pypi.org/pypi/pdm/json",
+        "jp": "$.urls[?(@.packagetype == 'bdist_wheel')].url",
+        "re": "(https://files.pythonhosted.org/packages/.*/pdm-(?<version>[\\d.]+(?:post\\d+)?)-.*\\.whl)",
         "replace": "${version}"
     },
     "autoupdate": {
-        "url": "https://files.pythonhosted.org/$match1"
+        "url": "$match1"
     }
 }
