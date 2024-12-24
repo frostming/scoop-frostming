@@ -37,10 +37,10 @@
     "checkver": {
         "url": "https://pypi.org/pypi/pdm/json",
         "jp": "$.urls[?(@.packagetype == 'bdist_wheel')].url",
-        "re": "(https://files.pythonhosted.org/packages/.*/pdm-(?<version>[\\d.]+(?:post\\d+)?)-.*\\.whl)",
+        "re": "https://files.pythonhosted.org/packages/(.*/pdm-(?<version>[\\d.]+(?:post\\d+)?)-.*\\.whl)",
         "replace": "${version}"
     },
     "autoupdate": {
-        "url": "$match1"
+        "url": "https://files.pythonhosted.org/packages/$match1"
     }
 }
